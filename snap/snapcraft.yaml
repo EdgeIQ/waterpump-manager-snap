@@ -11,7 +11,7 @@ confinement: strict
 
 apps:
   daemon:
-    command: bin/waterpump_manager.py
+    command: waterpump_manager.py
     daemon: simple
     plugs: [network-bind]
 

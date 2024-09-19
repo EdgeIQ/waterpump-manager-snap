@@ -7,7 +7,7 @@ A demo snap application that simulates a water pump manager daemon.
 To install the snap, use the following command:
 
 ``` bash
-sudo snap install waterpump-manager --devmode --dangerous
+sudo snap install waterpump-manager*.snap --devmode --dangerous
 ```
 
 This updated README.md file now includes all the necessary information about the project, including installation instructions, usage guidelines, configuration details, development setup, and contribution information. It provides a comprehensive overview of the waterpump-manager project.
@@ -34,7 +34,7 @@ sudo snap logs -f waterpump-manager
 The configuration is stored in `/var/snap/waterpump-manager/common/config.json`. This file is automatically created and updated when you use the `snap set` command.
 
 ```bash
-sudo snap set waterpump-manager pump_status=<on|off>
+sudo snap set waterpump-manager pump-status=<on|off>
 ```
 
 

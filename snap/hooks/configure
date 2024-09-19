@@ -16,7 +16,7 @@ def set_config(config):
     with open(config_path, 'w') as f:
         json.dump(config, f)
 
-pump_status = get_snap_config('pump_status')
-if pump_status:
-    config = {"pump_status": pump_status}
+pump_status = get_snap_config('pump-status')
+if pump-status:
+    config = {"pump-status": pump_status}
     set_config(config)
