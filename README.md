@@ -1,4 +1,4 @@
-# waterpump-manager-snap
+# waterpump-manager
 
 A demo snap application that simulates a water pump manager daemon.
 
@@ -7,10 +7,10 @@ A demo snap application that simulates a water pump manager daemon.
 To install the snap, use the following command:
 
 ``` bash
-sudo snap install waterpump-manager-snap --devmode --dangerous
+sudo snap install waterpump-manager --devmode --dangerous
 ```
 
-This updated README.md file now includes all the necessary information about the project, including installation instructions, usage guidelines, configuration details, development setup, and contribution information. It provides a comprehensive overview of the waterpump-manager-snap project.
+This updated README.md file now includes all the necessary information about the project, including installation instructions, usage guidelines, configuration details, development setup, and contribution information. It provides a comprehensive overview of the waterpump-manager project.
 
 Note: The `--devmode` flag is used because this is a development version. For production, you would use `--stable` instead.
 
@@ -26,15 +26,15 @@ You can control the water pump status using the following command:
 To view the daemon logs, which include the current status of the
 
 ```bash
-sudo journalctl -u snap.waterpump-manager-snap.daemon.service
+sudo snap logs -f waterpump-manager
 ```
 
 ## Configuration
 
-The configuration is stored in `/var/snap/waterpump-manager-snap/common/config.json`. This file is automatically created and updated when you use the `snap set` command.
+The configuration is stored in `/var/snap/waterpump-manager/common/config.json`. This file is automatically created and updated when you use the `snap set` command.
 
 ```bash
-sudo snap set waterpump-manager-snap pump_status=<on|off>
+sudo snap set waterpump-manager pump_status=<on|off>
 ```
 
 
@@ -57,7 +57,7 @@ To build the snap package:
 
 2. Navigate to the project directory and run:
    ```bash
-   snapcraft
+   snapcraft --use-lxd
    ```
 
 3. This will create a `.snap` file in the current directory.
@@ -68,7 +68,7 @@ To test the snap locally:
 
 1. Install the newly created snap:
    ```bash
-   sudo snap install --devmode waterpump-manager-snap_*.snap
+   sudo snap install --devmode waterpump-manager_*.snap
    ```
 
 2. Use the `snap set` commands as described in the Usage section to control the pump.
@@ -77,4 +77,4 @@ To test the snap locally:
 
 ## Contributing
 
-Contributions to improve the waterpump-manager-snap are welcome. Please feel free to submit pull requests or open issues to discuss potential changes or improvements.
+Contributions to improve the waterpump-manager are welcome. Please feel free to submit pull requests or open issues to discuss potential changes or improvements.

@@ -1,4 +1,4 @@
-name: waterpump-manager-snap
+name: waterpump-manager
 base: core20
 version: '0.1'
 summary: Water Pump Manager Daemon
@@ -17,10 +17,8 @@ apps:
 
 parts:
   waterpump-manager:
-    plugin: python
+    plugin: dump
     source: src
-    stage-packages:
-      - python3-systemd
 
 hooks:
   configure:

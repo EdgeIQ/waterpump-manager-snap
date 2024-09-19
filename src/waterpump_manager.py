@@ -4,12 +4,10 @@ import time
 import os
 import json
 import logging
-from systemd import journal
 
 # Set up logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 log = logging.getLogger('waterpump-manager')
-log.addHandler(journal.JournalHandler())
-log.setLevel(logging.INFO)
 
 def get_config():
     config_path = os.path.join(os.environ.get('SNAP_COMMON', '/var/snap/waterpump-manager-snap/common'), 'config.json')
@@ -28,7 +26,7 @@ def main():
         log.info(f"Water Pressure: {120 if pump_status == 'on' else 0} PSI")
         log.info(f"Water Flow Rate: {10 if pump_status == 'on' else 0} GPM")
         
-        time.sleep(10)
+        time.sleep(60)  # Check status every minute
 
 if __name__ == "__main__":
     main()
