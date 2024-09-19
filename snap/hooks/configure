@@ -17,6 +17,6 @@ def set_config(config):
         json.dump(config, f)
 
 pump_status = get_snap_config('pump-status')
-if pump-status:
+if pump_status:
     config = {"pump-status": pump_status}
     set_config(config)
